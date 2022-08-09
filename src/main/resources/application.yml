@@ -1,0 +1,40 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/sfcg?serverTimezone=UTC
+    username: root
+    password: 696996
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+#  redis:
+#    host: 106.14.36.107
+#    port: 6379
+#    password: 696996
+#    database: 0
+#    timeout: 10000ms
+#    lettuce:
+#      pool:
+#        max-active: 8
+#        max-wait: 1000ms
+#        max-idle: 200
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/*.xml
+
+  typeAliasesPackage: com.liuyin.sfcg.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: AUTO
+      logic-delete-value: -1
+      logic-not-delete-value: 0
+    banner: false
+
+#jwt:
+#  secret: f4e2e52034348f86b67cde581c0f9eb5
+#  expire: 3000
+#  header: token
